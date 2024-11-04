@@ -1,9 +1,12 @@
 <?php 
 
-// Model
 
-require 'dados.php';
+$db = new DB();
 
 
-   view('index', compact('livros'));
+$books = $db->books();
 
+view('index',[
+    'books'=>$books
+]);
+?>
